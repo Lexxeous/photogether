@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Photogether</title>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <link href="css/style.css" rel="stylesheet">
+  {{> favicon}}
+</head>
+
+<body id="index_body" class="bg-dark">
+  <div class="container-md blue-side-border">
+    {{> navbar}}
+
+    <img src="media/images/index_banner.jpg" class="img-fluid">
+
+    <div class="row mx-2">
+      <div class="col-md-8">
+        <h1 class="text-blue mt-4">About Us:</h1>
+
+        <p class="text-light text-justify">
+          Photogether® represents a community of photographers and videographers that are dedicated to giving you the best experience for any gathering. Whether you are hosting a wedding, a party, or just want to re-live the special moments in your loved one's life with high quality media, Photogether® is the place for you.
+          <br><br>
+          Choose a photographer or videographer that is right for you. You can <a href="/explore" class="text-blue">explore</a> highly rated, local, professional profiles, read their biographies, view their ratings and reviews, see some of their best work, and even privately message them, all in one place.
+          <br><br>
+          If you have questions about how to get the most out of your experience, here at Photogether®, please visit our <a href="/contact" class="text-blue">contact</a> page and a representative will get back with you as soon as possible. Or email us directly at <a href="mailto:photogether@gmail.com" class="text-blue">photogether@gmail.com</a> We pride ourselves in providing the best product for everyone involved.
+          <br><br>
+          <a href="/signup" class="text-blue">Sign-up</a> to be a customer or professional today!
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h1 class="text-blue mt-4">Top Professionals:</h1>
+
+        {{> top_professionals}}
+
+      </div>
+    </div>
+
+    {{> footer}}
+
+  </div>
+</body>
+</html>

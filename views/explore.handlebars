@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Photogether</title>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <link href="css/style.css" rel="stylesheet">
+  {{> favicon}}
+</head>
+
+<body id="index_body" class="bg-dark">
+  <div class="container-md blue-side-border">
+    {{> navbar}}
+
+    <div class="row mb-4 mx-2">
+      <div class="col-md-8">
+        <h1 class="text-blue">Our Vision:</h1>
+
+        <p class="text-light text-justify">
+          Photogether® is home to a large community of customers and professionals alike that are dedicated to capturing stunning photos and videos of life's most precious moments. 
+          <br><br>
+          We implement a public, one-to-one account rating and review system so you can feel confident about the quality of service that you will receive from our users.
+          <br><br>
+          If you are satisfied with the services provided by one of our professionals, please provide them with a good rating, as it will help the user experience of everyone who visits our site. We aplologize for any poor experiences you may encounter, ask that give a fair rating, and inform us via the <a href="/contact" class="text-blue">contact</a> page.
+          <br><br>
+          We also offer a direct message system for you and any other user so that you can stay "in-the-know" about which professional will be best suited for you.
+          <br><br>
+          Let's start your journey right now.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h1 class="text-blue">Top Professionals:</h1>
+        {{> top_professionals}}
+      </div>
+    </div>
+
+    <div class="d-flex flex-row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card bg-light">
+          <div class="card-body">
+
+            <div class="card-header mb-4">
+              <h1 class="text-blue">Explore our Community:</h1>
+              <h2 class="text-dark">Find you a professional that will fit your needs!</h2>
+            </div>
+
+            <form>
+              <div class="form-group py-3">
+                <input type="text" class="form-control form-control-md" name="query" placeholder="Search...">
+              </div>
+              <input id="submit" type="submit" value="Search" class="btn btn-dark btn-outline-light btn-block">
+            </form>
+
+          </div>
+
+          {{> form_card_footer}}
+
+        </div>
+      </div>
+    </div>
+    
+    {{> footer}}
+
+  </div>
+</body>
+</html>

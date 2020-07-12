@@ -1,0 +1,53 @@
+/* Light Blue Theme Color Hex Code: #2196f3 */
+
+/* Bootstrap Dark Background Theme Color Hex Code: #343A40 */
+
+#navbar_logo {
+  max-height: 2em;
+  width: auto;
+}
+
+#footer_logo {
+  max-height: 3em;
+  width: auto;
+}
+
+#submit:hover {
+	background-color: #2196f3;
+}
+
+a.top-prof-name {
+  color: #2196f3;
+}
+
+.top-prof-headshot {
+  max-height: 3em;
+  max-width: auto;
+}
+
+.top-prof-stars {
+  max-height: 1.5em;
+  max-width: auto;
+}
+
+.blue-side-border {
+  border-right: 5px solid #2196f3;
+  border-left: 5px solid #2196f3;
+}
+
+.navbar-bottom-blue-border {
+  border-bottom: 2px solid #2196f3;
+}
+
+.navbar-side-dark-border {
+  border-right: 5px solid #343A40;
+  border-left: 5px solid #343A40;
+}
+
+.footer-top-blue-border {
+  border-top: 2px solid #2196f3;
+}
+
+.text-blue {
+  color: #2196f3;
+}
