@@ -2,6 +2,8 @@
 
 /* Bootstrap Dark Background Theme Color Hex Code: #343A40 */
 
+/* Light Grey Navbar Text Color Hex Code: #9a9da0 */
+
 #navbar_logo {
   max-height: 2em;
   width: auto;
@@ -33,6 +35,12 @@ a.top-prof-name {
 .blue-side-border {
   border-right: 5px solid #2196f3;
   border-left: 5px solid #2196f3;
+}
+
+.nav-item-inline {
+  display: inline-flex;
+  height: 1.7em;
+  width: auto;
 }
 
 .navbar-bottom-blue-border {

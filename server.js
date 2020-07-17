@@ -55,6 +55,23 @@ app.get('/*', (req, res) => {
 });
 
 // –––––––––––––––––––––––––––––––––––––––––––––– HANDLE POST REQUESTS ––––––––––––––––––––––––––––––––––––––––––––– //
+
+// Handle the POST request sent to the "/sendEmail" route
+app.post('/send_contact_email', (req, res) => {
+  const contact_mailer = require("./public/js/contact_mailer.js")(req.body)
+
+  contact_mailer.transporter.sendMail(contact_mailer.mail_options, (err, info) => {
+    if (err) {
+      console.log(err);
+      res.render('contact', {msg: "Contact request failed to send. :(", layout: false});
+      return
+    }
+    else{
+      res.render('contact', {msg: "Contact request sent! :)", layout: false});
+      return
+    }
+  });
+});
   
 // Start server
 const PORT = process.env.PORT || 8080;
