@@ -7,7 +7,22 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose')
+const morgan = require('morgan')
 dotenv.config();
+
+// –––––––––––––––––––––––––––––––––––––––––––––––– MANAGE DATEBASE –––––––––––––––––––––––––––––––––––––––––––––––– //
+
+mongoose.connect("mongodb://localhost:27017/photogether", {useNewUrlParser: true, useUnifiedTopology: true});
+const db = mongoose.connection;
+
+db.on("error", (err) => {
+  console.log(err);
+});
+
+db.once("open", () => {
+  console.log("Database connection established.")
+});
 
 // ––––––––––––––––––––––––––––––––––––––––––––––– DEFINE EXPRESS APP –––––––––––––––––––––––––––––––––––––––––––––– //
 
@@ -19,6 +34,8 @@ app.use(express.static(__dirname + "/public")); // set default file path for pub
 // Declare view engine setup
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+
+app.use(morgan("dev"))
 
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -56,9 +73,8 @@ app.get('/*', (req, res) => {
 
 // –––––––––––––––––––––––––––––––––––––––––––––– HANDLE POST REQUESTS ––––––––––––––––––––––––––––––––––––––––––––– //
 
-// Handle the POST request sent to the "/sendEmail" route
 app.post('/send_contact_email', (req, res) => {
-  const contact_mailer = require("./public/js/contact_mailer.js")(req.body)
+  const contact_mailer = require("./contact_mailer.js")(req.body)
 
   contact_mailer.transporter.sendMail(contact_mailer.mail_options, (err, info) => {
     if (err) {
@@ -73,8 +89,9 @@ app.post('/send_contact_email', (req, res) => {
   });
 });
   
-// Start server
-const PORT = process.env.PORT || 8080;
+// –––––––––––––––––––––––––––––––––––––––––––––––––– START SERVER ––––––––––––––––––––––––––––––––––––––––––––––––– //
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
